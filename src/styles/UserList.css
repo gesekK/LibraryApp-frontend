@@ -1,0 +1,52 @@
+.user-list-page {
+    width: 100vw;
+    height: 100vh;
+    background-color: #f5f2e9;
+    margin-top: -20px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.user-list-container {
+    width: 70%;
+    margin-left: 5%;
+    align-self: start;
+    background-color: #f5f2e9;
+    padding: 20px;
+}
+
+.user-list-header {
+    font-family: Imbue, serif;
+    font-weight: bold;
+    color: #483C32;
+    font-size: 36px;
+    margin-bottom: 20px; /* Dodanie odstępu poniżej nagłówka */
+    text-align: left;
+}
+
+.user-list-table {
+    width: 100%; /* Ustawienie szerokości na 100% kontenera */
+    border-collapse: collapse;
+}
+
+.user-list-table th,
+.user-list-table td {
+    border: 1px solid #483C32;
+    font-family: Imbue, serif;
+    color: #483C32;
+    padding: 12px; /* Zwiększenie odstępu w komórkach */
+    text-align: center;
+}
+
+.user-list-table th {
+    background-color: #e9e4d8; /* Delikatnie zmiana koloru tła nagłówka */
+}
+
+.user-list-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.user-list-table tr:hover {
+    background-color: #ddd;
+}

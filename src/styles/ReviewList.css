@@ -1,0 +1,39 @@
+.review-list-container {
+    margin-left: 50px;
+    background-color: #f5f2e9;
+    width: 90%;
+}
+
+.review-list-header{
+    font-family: Imbue, serif;
+    font-weight: bold;
+    justify-self: left;
+    color: #483C32;
+    font-size: 60px;
+}
+
+.review-list-table {
+    width: 80%;
+    border-collapse: collapse;
+}
+
+.review-list-table th,
+.review-list-table td {
+    border: 1px solid #483C32;
+    font-family: Imbue, serif;
+    color: #483C32;
+    padding: 8px;
+    text-align: center;
+}
+
+.review-list-table th {
+    background-color: #f5f2e9;
+}
+
+.review-list-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.review-list-table tr:hover {
+    background-color: #ddd;
+}

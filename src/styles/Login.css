@@ -1,0 +1,108 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+
+.loginPage{
+    width: calc(60% - 30px);
+    height: 100vh;
+    background-image: url("./../components/assets/magicstudio-art (1).jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+.container{
+    position: fixed;
+    right: 0;
+    margin-top: 0;
+    margin-right: auto;
+    background: #f5f2e9;
+    width: calc(40% - 30px);
+    height: 100vh;
+    padding: 30px;
+}
+
+.header{
+    flex-direction: column;
+    width: 450px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 15%;
+}
+
+.text{
+    font-family: Imbue, serif;
+    text-align: left;
+    color: #282c34;
+    font-size: 35px;
+    font-weight: 300;
+}
+
+
+.text2{
+    text-align: left;
+    font-family: Imbue, serif;
+    color: #483C32;
+    font-size: 35px;
+    font-weight: 500;
+
+}
+
+
+.inputs{
+    margin-top: 55px;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    width: 450px;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.username{
+    margin-top: 10px;
+    font-weight: 500;
+    color: #3c6232;
+    font-size: 14px;
+    align-self: start;
+}
+
+.input{
+    display: flex;
+    width: 450px;
+    border: #3c6232 solid 1px;
+    border-radius: 10px;
+    padding-left: 10px;
+}
+
+
+.input input{
+    height: 20px;
+    width: 450px;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #797979;
+    font-size: 13px;
+}
+
+
+.submit{
+    display: flex;
+    margin-top: 20px;
+    width: 200px;
+    justify-content: center;
+    align-items: center;
+    height: 59px;
+    color: whitesmoke;
+    background: #3c6232;
+    font-size: 19px;
+    font-weight: 400;
+    border-radius: 20px;
+    border: solid #3c6232 2px;
+    cursor: pointer;
+}
+

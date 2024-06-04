@@ -1,0 +1,38 @@
+.container{
+    flex-direction: column;
+    display: flex;
+    align-self: flex-start;
+    align-items: flex-start;
+    margin-top: 3%;
+    margin-left: 4%;
+
+}
+
+.greeting{
+    font-size: 25px;
+    font-family: Imbue, serif;
+    justify-self: left;
+    color: #483C32;
+
+}
+
+.info{
+    font-family: Imbue, serif;
+    font-size: 12px;
+    margin-top: 15px;
+}
+
+.search-bar{
+    margin-top: 15px;
+}
+
+.subheader{
+
+    margin-top: 10%;
+    width: 80vw;
+    text-align: left;
+    font-size: 25px;
+    font-family: Imbue, serif;
+    justify-self: left;
+    color: #483C32;
+}
