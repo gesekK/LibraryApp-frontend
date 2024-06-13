@@ -1,19 +1,37 @@
-.review-list-container {
-    margin-left: 50px;
+.review-list-page {
+    height:100vh;
+    width: 85vw;
+    margin-top: -20px;
+    justify-content: center; /* Wyśrodkowanie zawartości wzdłuż osi X */
+    align-items: center; /* Wyśrodkowanie zawartości wzdłuż osi Y */
+    flex-direction: column; /* Ustawienie kierunku flexbox na kolumnę */
     background-color: #f5f2e9;
+}
+.review-list-container {
     width: 90%;
+    margin-left: 5%;
+    align-self: start;
+    background-color: #f5f2e9;
+    padding: 20px;
+}
+.review-list-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px; /* opcjonalnie: odstęp między nagłówkiem a tabelą */
 }
 
-.review-list-header{
+.review-list-header h2 {
     font-family: Imbue, serif;
     font-weight: bold;
-    justify-self: left;
     color: #483C32;
-    font-size: 60px;
+    font-size: 36px;
+    margin-bottom: 20px; /* Dodanie odstępu poniżej nagłówka */
+    text-align: left;
 }
 
 .review-list-table {
-    width: 80%;
+    width: 100%; /* Ustawienie szerokości na 100% kontenera */
     border-collapse: collapse;
 }
 
@@ -22,12 +40,12 @@
     border: 1px solid #483C32;
     font-family: Imbue, serif;
     color: #483C32;
-    padding: 8px;
+    padding: 12px; /* Zwiększenie odstępu w komórkach */
     text-align: center;
 }
 
 .review-list-table th {
-    background-color: #f5f2e9;
+    background-color: #e9e4d8; /* Delikatnie zmiana koloru tła nagłówka */
 }
 
 .review-list-table tr:nth-child(even) {

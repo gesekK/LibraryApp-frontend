@@ -1,14 +1,18 @@
 import React, { useState } from 'react';
 import '../styles/SearchBar.css';
 
-const SearchBar: React.FC = () => {
+interface SearchBarProps {
+  onSearch: (searchTerm: string) => void;
+}
+
+const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
   const [searchTerm, setSearchTerm] = useState('');
 
   const handleSearch = (event: React.KeyboardEvent<HTMLInputElement>) => {
     if (event.key === 'Enter') {
       const term = event.currentTarget.value.trim();
       if (term !== '') {
-        console.log('Search: ', term);
+        onSearch(term);
         setSearchTerm('');
       }
     }

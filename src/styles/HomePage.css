@@ -1,0 +1,199 @@
+body {
+    font-family: 'Quicksand', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f2e9;;
+}
+
+/* Navbar */
+.navbar {
+    background-color: transparent;
+    margin-top: 20px;
+    align-self: end;
+
+}
+
+
+.navbar-brand {
+    color: white;
+    font-weight: bold;
+}
+
+.home-button{
+    height: 40px;
+    width: 120px;
+}
+
+
+
+/* Banner Section */
+.banner-section {
+    background-color: #333;
+    color: #fff;
+    padding: 40vh 0;
+    height: 100vh;
+    background-image: url("C:\Users\48695\WebstormProjects\library_frontend\src\components\assets\hallelujah-6516410_1280.jpg");
+}
+
+.img-fluid{
+    height: auto;
+    background-image: url("C:\Users\48695\WebstormProjects\library_frontend\src\components\assets\books.png");
+
+}
+
+.lead {
+    font-size: 1.25rem;
+    font-weight: 300;
+}
+
+.btn-danger {
+    background-color: #483C32;
+    border-color: #483C32;
+}
+
+.btn-danger:hover {
+    background-color: #f5f2e9;
+    border-color: #f5f2e9;
+}
+
+/* Card Section */
+.card {
+    border: 1px solid #483C32;
+    background-color: transparent;
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+.card .card-body {
+    padding: 20px;
+    background-color: transparent;
+    border-color: #483C32;
+}
+
+.card-title {
+    color: #483C32;
+    font-weight: bold;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.card-text {
+    color: #483C32;
+    font-size: 1rem;
+}
+
+.h1 {
+    font-size: 2.5rem;
+}
+
+.h1.mb-3 i {
+    font-size: 3rem;
+}
+
+/* Information Section */
+.info-section {
+    padding: 3rem 0;
+}
+
+.bg-light {
+    background-color: transparent !important;
+}
+
+.text-danger {
+    color: #483C32 !important;
+}
+
+.text-center {
+    text-align: center !important;
+}
+
+.text-sm-start {
+    text-align: left !important;
+}
+
+.text-lg-start {
+    text-align: left !important;
+}
+
+/* Footer */
+.footer-section {
+    background-color: #483C32;
+    padding: 20px 0;
+}
+
+footer .lead {
+    margin-bottom: 0;
+}
+
+footer a {
+    color: #f5f2e9;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #483C32;
+}
+
+/* Utility classes for spacing */
+.mt-6 {
+    margin-top: 1.5rem;
+}
+
+.p-5 {
+    padding: 3rem !important;
+}
+
+.pb-5 {
+    padding-bottom: 3rem !important;
+}
+
+.pt-5 {
+    padding-top: 3rem !important;
+}
+
+/* Custom icon sizes */
+.bi {
+    font-size: 3rem;
+}
+
+/* Google Maps iframe */
+#map iframe {
+    width: 100%;
+    height: 450px;
+    border: 0;
+    display: block;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .navbar-brand {
+        font-size: 1.5rem;
+    }
+
+    .lead {
+        font-size: 1rem;
+    }
+
+    .h1 {
+        font-size: 2rem;
+    }
+
+    .card-title {
+        font-size: 1.25rem;
+    }
+
+    .card-text {
+        font-size: 0.875rem;
+    }
+
+    .btn-lg {
+        font-size: 1rem;
+        padding: 0.75rem 1.25rem;
+    }
+
+    .img-fluid {
+        width: 100%;
+    }}
