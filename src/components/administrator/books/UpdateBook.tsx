@@ -2,23 +2,26 @@ import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { Formik, Form, ErrorMessage, Field } from 'formik';
 import * as Yup from 'yup';
-import { Book } from '../../models/Book';
-import BookService from '../../services/BookService';
-import '../../styles/UpdateBook.css';
-import { Button, FormLabel } from '@mui/material'; // Importowanie stylu CSS
+import { Book } from '../../../models/Book';
+import BookService from '../../../services/BookService';
+import '../../../styles/UpdateBook.css';
+import { Button, FormLabel, CircularProgress, Typography } from '@mui/material';
+import { useTranslation } from 'react-i18next';
 
 const UpdateBook: React.FC = () => {
+  const { t } = useTranslation();
   const { id } = useParams<{ id: string }>();
   const [initialValues, setInitialValues] = useState<Book>({
     availableCopies: 0,
     countOfLoans: 0,
-    id: 0,
     isbn: '',
     publisher: '',
     title: '',
     author: '',
     publishYear: 0,
   });
+  const [loading, setLoading] = useState<boolean>(true);
+  const [error, setError] = useState<string | null>(null);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -28,21 +31,26 @@ const UpdateBook: React.FC = () => {
           const response = await BookService.getBookById(Number(id));
           setInitialValues(response.data);
         } catch (error) {
-          console.error('There was an error fetching the book!', error);
+          setError(t('updateBook.errorFetching'));
+          console.error(t('updateBook.errorFetching'), error);
+        } finally {
+          setLoading(false);
         }
       }
     };
 
     fetchBook();
-  }, [id]);
+  }, [id, t]);
 
   const validationSchema = Yup.object({
-    title: Yup.string().required('Title is required'),
-    author: Yup.string().required('Author is required'),
-    publishYear: Yup.number().required('Published Date is required'),
+    title: Yup.string().required(t('updateBook.title') + ' ' + t('required')),
+    author: Yup.string().required(t('updateBook.author') + ' ' + t('required')),
+    publishYear: Yup.number().required(
+      t('updateBook.publishYear') + ' ' + t('required'),
+    ),
     availableCopies: Yup.number()
-      .required('Available copies is required')
-      .min(0, 'Available copies must be at least 0'),
+      .required(t('updateBook.availableCopies') + ' ' + t('required'))
+      .min(0, t('updateBook.availableCopies') + ' ' + t('minValue')),
   });
 
   const handleSubmit = async (
@@ -51,18 +59,29 @@ const UpdateBook: React.FC = () => {
   ) => {
     try {
       await BookService.updateBook(Number(id), values);
-      alert('Book updated successfully!');
-      navigate('/');
+      alert(t('updateBook.updateSuccess'));
+      navigate('/bookList');
     } catch (error) {
-      console.error('There was an error updating the book!', error);
+      alert(t('updateBook.errorUpdating'));
+      console.error(t('updateBook.errorUpdating'), error);
+    } finally {
+      setSubmitting(false);
     }
-    setSubmitting(false);
   };
+
+  if (loading) {
+    return (
+      <div className="loading-container">
+        <CircularProgress />
+      </div>
+    );
+  }
 
   return (
     <div className="update-book-page">
       <div className="update-book-container">
-        <h2 className="update-book-header">Update Book</h2>
+        <h2 className="update-book-header">{t('updateBook.header')}</h2>
+        {error && <Typography color="error">{error}</Typography>}
         <Formik
           enableReinitialize
           initialValues={initialValues}
@@ -71,22 +90,24 @@ const UpdateBook: React.FC = () => {
         >
           {({ isSubmitting }) => (
             <Form className="update-book-form">
-              <FormLabel htmlFor="isbn">ISBN:</FormLabel>
+              <FormLabel htmlFor="isbn">{t('updateBook.isbn')}:</FormLabel>
               <div>
                 <Field type="text" name="isbn" />
                 <ErrorMessage name="isbn" component="div" className="error" />
               </div>
-              <FormLabel htmlFor="title">Title:</FormLabel>
+              <FormLabel htmlFor="title">{t('updateBook.title')}:</FormLabel>
               <div>
                 <Field type="text" name="title" />
                 <ErrorMessage name="title" component="div" className="error" />
               </div>
-              <FormLabel htmlFor="author">Author:</FormLabel>
+              <FormLabel htmlFor="author">{t('updateBook.author')}:</FormLabel>
               <div>
                 <Field type="text" name="author" />
                 <ErrorMessage name="author" component="div" className="error" />
               </div>
-              <FormLabel htmlFor="publisher">Publisher:</FormLabel>
+              <FormLabel htmlFor="publisher">
+                {t('updateBook.publisher')}:
+              </FormLabel>
               <div>
                 <Field type="text" name="publisher" />
                 <ErrorMessage
@@ -95,7 +116,9 @@ const UpdateBook: React.FC = () => {
                   className="error"
                 />
               </div>
-              <FormLabel htmlFor="publishYear">Published Year:</FormLabel>
+              <FormLabel htmlFor="publishYear">
+                {t('updateBook.publishYear')}:
+              </FormLabel>
               <div>
                 <Field type="text" name="publishYear" />
                 <ErrorMessage
@@ -104,7 +127,9 @@ const UpdateBook: React.FC = () => {
                   className="error"
                 />
               </div>
-              <FormLabel htmlFor="availableCopies">Available Copies:</FormLabel>
+              <FormLabel htmlFor="availableCopies">
+                {t('updateBook.availableCopies')}:
+              </FormLabel>
               <div>
                 <Field type="number" name="availableCopies" />
                 <ErrorMessage
@@ -114,7 +139,11 @@ const UpdateBook: React.FC = () => {
                 />
               </div>
               <Button type="submit" disabled={isSubmitting}>
-                Update Book
+                {isSubmitting ? (
+                  <CircularProgress size={24} />
+                ) : (
+                  t('updateBook.update')
+                )}
               </Button>
             </Form>
           )}

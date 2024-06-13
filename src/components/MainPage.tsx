@@ -9,10 +9,7 @@ const MainPage: React.FC = () => {
       <div className="info">
         A Great Book Should Leave You With Many Experience
       </div>
-      <div className="search-bar">
-        {' '}
-        <SearchBar />{' '}
-      </div>
+      <div className="search-bar"> </div>
       <div className="subheader">Most frequently borrowed books</div>
       <div className="subheader">Top rated </div>
     </div>

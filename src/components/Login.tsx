@@ -1,9 +1,9 @@
-import React, { useCallback } from 'react';
-import { Formik, Form, Field, ErrorMessage } from 'formik';
+import React from 'react';
+import { Formik, Form, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import axios from 'axios';
 import { TextField, Button, FormLabel } from '@mui/material';
-import { Navigate, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import '../styles/Login.css';
 
 const LoginSignup: React.FC = () => {
@@ -24,7 +24,10 @@ const LoginSignup: React.FC = () => {
   const handleSubmit = async (values: { login: string; password: string }) => {
     try {
       const response = await axios.post('http://localhost:8080/login', values);
+      const token = response.data; // assuming the token is returned in response.data.token
+      localStorage.setItem('userToken', token);
       console.log('Response:', response);
+      alert('Login successful');
       navigate('/addBook');
     } catch (error) {
       console.error('Error:', error);
@@ -51,11 +54,9 @@ const LoginSignup: React.FC = () => {
               </FormLabel>
               <TextField
                 className="input"
-                type="text"
                 id="login"
                 name="login"
                 placeholder="Enter your username"
-                fullWidth
                 variant="outlined"
                 onBlur={handleBlur}
                 onChange={handleChange}
@@ -70,7 +71,6 @@ const LoginSignup: React.FC = () => {
                 id="password"
                 name="password"
                 placeholder="Enter your password"
-                fullWidth
                 variant="outlined"
                 onBlur={handleBlur}
                 onChange={handleChange}

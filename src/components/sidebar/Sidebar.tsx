@@ -3,6 +3,7 @@ import { Layout } from 'antd';
 import { Outlet } from 'react-router-dom';
 import '../../styles/Sidebar.css';
 import MenuList from './MenuList';
+import LanguageSwitcher from '../LanguageSwitcher';
 
 const { Sider, Content } = Layout;
 

@@ -1,0 +1,193 @@
+{
+  "addReview": {
+    "header": "Add Review",
+    "rating": "Rating (1-5)",
+    "comment": "Comment",
+    "submitButton": "Add Review"
+  },
+
+  "addBook": {
+    "header": "Add Book",
+    "isbn": "ISBN",
+    "title": "Title",
+    "author": "Author",
+    "publisher": "Publisher",
+    "publishYear": "Published Year",
+    "availableCopies": "Available Copies",
+    "submitButton": "Accept",
+    "required": "is required",
+    "minValue": "must be at least 0",
+    "addSuccess": "Book added successfully!",
+    "addError": "There was an error adding the book!"
+  },
+
+  "bookList": {
+    "header": "Book List",
+    "id": "ID",
+    "isbn": "ISBN",
+    "title": "Title",
+    "author": "Author",
+    "publisher": "Publisher",
+    "publishYear": "Publish Year",
+    "availableCopies": "Available Copies",
+    "countOfLoans": "Count Of Loans",
+    "actions": "Actions",
+    "delete": "DELETE",
+    "modify": "MODIFY",
+    "searchError": "There was an error searching for the book!",
+    "fetchError": "There was an error fetching the books!",
+    "deleteError": "There was an error deleting the book!",
+    "unknownError": "An unknown error occurred.",
+    "deleteSuccess": "Book deleted successfully!"
+  },
+
+  "updateBook": {
+    "header": "Update Book",
+    "isbn": "ISBN",
+    "title": "Title",
+    "author": "Author",
+    "publisher": "Publisher",
+    "publishYear": "Publish Year",
+    "availableCopies": "Available Copies",
+    "update": "Update Book",
+    "loading": "Loading...",
+    "errorFetching": "There was an error fetching the book!",
+    "errorUpdating": "There was an error updating the book!",
+    "updateSuccess": "Book updated successfully!"
+  },
+
+  "loanList": {
+    "header": "Loan List",
+    "id": "ID",
+    "bookTitle": "Book Title",
+    "borrower": "Borrower",
+    "loanDate": "Loan Date",
+    "returnDate": "Return Date",
+    "dueDate": "Due Date",
+    "status": "Status",
+    "action": "Action",
+    "confirm": "CONFIRM",
+    "confirmSuccess": "Confirmed successfully!",
+    "errorFetching": "There was an error fetching the loans!",
+    "errorConfirming": "There was an error confirming the loan!"
+  },
+
+  "reviewList": {
+    "header": "Review List",
+    "bookTitle": "Book Title",
+    "reviewer": "Reviewer",
+    "comment": "Comment",
+    "rating": "Rating",
+    "errorFetching": "There was an error fetching the reviews!",
+    "errorSearching": "There was an error searching for the reviews!"
+  },
+
+  "addUser": {
+    "header": "Add User",
+    "username": "Username",
+    "email": "Email",
+    "fullName": "Full Name",
+    "password": "Password",
+    "role": "Role",
+    "accept": "Accept",
+    "usernameRequired": "Username is required",
+    "emailInvalid": "Invalid email format",
+    "emailRequired": "Email is required",
+    "fullNameRequired": "Full name is required",
+    "passwordRequired": "Password is required",
+    "roleRequired": "Role is required",
+    "roleInvalid": "Role must be either ROLE_READER or ROLE_LIBRARY_EMPLOYEE",
+    "userAdded": "User added successfully"
+  },
+
+  "updateUser": {
+    "header": "Update User",
+    "username": "Username",
+    "email": "Email",
+    "fullName": "Full Name",
+    "password": "Password",
+    "role": "Role",
+    "saveChanges": "Save Changes",
+    "emailInvalid": "Invalid email format",
+    "passwordMin": "Password must contain at least 5 characters",
+    "roleInvalid": "Role must be either ROLE_READER or ROLE_LIBRARY_EMPLOYEE",
+    "updateSuccess": "User updated successfully!",
+    "updateError": "There was an error updating the user!"
+  },
+
+  "userList": {
+    "header": "User List",
+    "username": "Username",
+    "fullName": "Full Name",
+    "email": "Email",
+    "role": "Role",
+    "deleteAction": "DELETE",
+    "updateAction": "MODIFY",
+    "deleteSuccess": "User deleted successfully!",
+    "deleteError": "There was an error deleting the user!",
+    "unknownError": "An unknown error occurred.",
+    "searchError": "There was an error searching for the user!"
+  },
+
+  "usersBookList": {
+  "Book List": "Book List",
+  "ID": "ID",
+  "ISBN": "ISBN",
+  "Title": "Title",
+  "Author": "Author",
+  "Publisher": "Publisher",
+  "Publish Year": "Publish Year",
+  "Available Copies": "Available Copies",
+  "Count Of Loans": "Count Of Loans",
+  "Actions": "Actions",
+  "BORROW": "BORROW",
+  "REVIEW": "REVIEW",
+  "Error": "Error",
+  "There was an error fetching the books!": "There was an error fetching the books!",
+  "User not authenticated. Please log in to borrow books.": "User not authenticated. Please log in to borrow books.",
+  "No token found": "No token found",
+  "Token has expired": "Token has expired",
+  "There was an error decoding the token!": "There was an error decoding the token!",
+  "Book borrowed successfully!": "Book borrowed successfully!",
+  "There was an error searching for the book!": "There was an error searching for the book!"
+},
+  "usersLoanList": {
+  "My Loan History": "My Loan History",
+  "ID": "ID",
+  "Book Title": "Book Title",
+  "Loan Date": "Loan Date",
+  "Return Date": "Return Date",
+  "Due Date": "Due Date",
+  "Status": "Status",
+  "Action": "Action",
+  "RETURN": "RETURN",
+  "Returned successfully!": "Returned successfully!",
+  "An error occurred while fetching the loans.": "An error occurred while fetching the loans.",
+  "Error": "Error",
+  "No token found": "No token found",
+  "Token has expired": "Token has expired",
+  "User ID not found in token": "User ID not found in token",
+  "There was an error decoding the token!": "There was an error decoding the token!",
+  "There was an error fetching the loans!": "There was an error fetching the loans!",
+  "There was an error returning the book!": "There was an error returning the book!",
+  "An unknown error occurred.": "An unknown error occurred."
+},
+
+  "login": {
+
+  "Hello there,": "Hello there,",
+  "Welcome to Library System!": "Welcome to Library System!",
+  "Username": "Username",
+  "Password": "Password",
+  "Enter your username": "Enter your username",
+  "Enter your password": "Enter your password",
+  "Log In": "Log In",
+  "Username is required": "Username is required",
+  "Password is required": "Password is required",
+  "Password must have at least 5 characters": "Password must have at least 5 characters",
+  "Login failed. Please check your credentials and try again.": "Login failed. Please check your credentials and try again."
+}
+
+}
+
+

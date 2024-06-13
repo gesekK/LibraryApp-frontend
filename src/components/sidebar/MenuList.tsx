@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Menu } from 'antd';
 import Logo from './Logo';
 import { Link } from 'react-router-dom';
+import LanguageSwitcher from '../LanguageSwitcher';
 
 interface MenuListProps {
   darkTheme: boolean;
@@ -22,26 +23,15 @@ const MenuList: React.FC<MenuListProps> = ({ darkTheme }) => {
       <Menu.Item className="menu-item" key="home">
         <Link to="/">Home</Link>
       </Menu.Item>
-      <Menu.SubMenu key="loan" title="Loan">
-        <Menu.Item key="loanList">
-          <Link to="/loanList">Loan List</Link>
-        </Menu.Item>
-        <Menu.Item key="borrowBook">
-          <Link to="/borrowBook">Borrow Book</Link>
-        </Menu.Item>
-        <Menu.Item key="returnBook">
-          <Link to="/returnBook">Return Book</Link>
-        </Menu.Item>
-      </Menu.SubMenu>
+      <Menu.Item key="loan" title="Loans">
+        <Link to="/loanList">Loans</Link>
+      </Menu.Item>
       <Menu.SubMenu key="user" title="Users">
         <Menu.Item key="addUser">
           <Link to="/addUser">Add User</Link>
         </Menu.Item>
         <Menu.Item key="userList">
           <Link to="/userList">User List</Link>
-        </Menu.Item>
-        <Menu.Item key="updateUser">
-          <Link to="/updateUser">Update User</Link>
         </Menu.Item>
       </Menu.SubMenu>
       <Menu.SubMenu key="books" title="Books">
@@ -51,21 +41,13 @@ const MenuList: React.FC<MenuListProps> = ({ darkTheme }) => {
         <Menu.Item key="bookList">
           <Link to="/bookList">Book List</Link>
         </Menu.Item>
-        <Menu.Item key="updateBook">
-          <Link to="/updateBook">Update Book</Link>
-        </Menu.Item>
-        <Menu.Item key="deleteBook">
-          <Link to="/deleteBook">Delete Book</Link>
-        </Menu.Item>
       </Menu.SubMenu>
-      <Menu.SubMenu key="reviews" title="Reviews">
-        <Menu.Item key="addReview">
-          <Link to="/addReview">Add Review</Link>
-        </Menu.Item>
-        <Menu.Item key="reviewList">
-          <Link to="/reviewList">Review List</Link>
-        </Menu.Item>
-      </Menu.SubMenu>
+      <Menu.Item key="reviews" title="Reviews">
+        <Link to="/reviewList">Reviews</Link>
+      </Menu.Item>
+      <div className="language-switcher">
+        <LanguageSwitcher></LanguageSwitcher>
+      </div>
     </Menu>
   );
 };

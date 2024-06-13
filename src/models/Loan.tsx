@@ -2,11 +2,12 @@ import { Book } from './Book';
 import { User } from './User';
 
 export interface Loan {
-  id?: number;
+  loanId?: number;
   book: Book;
   user: User;
   loanDate: string;
   returnDate?: string;
-  approved: boolean;
-  returned: boolean;
+  dueDate: string;
+  status: string;
+  confirmReturn: boolean;
 }

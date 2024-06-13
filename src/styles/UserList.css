@@ -1,5 +1,5 @@
 .user-list-page {
-    width: 100vw;
+    width: 85vw;
     height: 100vh;
     background-color: #f5f2e9;
     margin-top: -20px;
@@ -9,14 +9,21 @@
 }
 
 .user-list-container {
-    width: 70%;
+    width: 90%;
     margin-left: 5%;
     align-self: start;
     background-color: #f5f2e9;
     padding: 20px;
 }
-
 .user-list-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px; /* opcjonalnie: odstęp między nagłówkiem a tabelą */
+}
+
+
+.user-list-header h2 {
     font-family: Imbue, serif;
     font-weight: bold;
     color: #483C32;

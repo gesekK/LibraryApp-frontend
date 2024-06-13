@@ -5,40 +5,114 @@ import { Loan } from '../models/Loan';
 const API_URL = 'http://localhost:8080/user';
 
 class UserService {
+  getToken() {
+    return localStorage.getItem('userToken');
+  }
   async getAllUsers() {
-    return axios.get<User[]>(`${API_URL}/getAll`);
+    const token = this.getToken();
+    if (!token) {
+      throw new Error('No token found');
+    }
+    return axios.get<User[]>(`${API_URL}/getAll`, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
   }
 
   async getUserById(id: number) {
-    return axios.get<User>(`${API_URL}/${id}`);
+    const token = this.getToken();
+    if (!token) {
+      throw new Error('No token found');
+    }
+    return axios.get<User>(`${API_URL}/${id}`, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
   }
 
   async getUserByUsername(username: string) {
-    return axios.get<User>(`${API_URL}/username/${username}`);
+    const token = this.getToken();
+    if (!token) {
+      throw new Error('No token found');
+    }
+    return axios.get<User>(`${API_URL}/username/${username}`, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
   }
 
   async getUserByEmail(email: string) {
-    return axios.get<User>(`${API_URL}/email/${email}`);
+    const token = this.getToken();
+    if (!token) {
+      throw new Error('No token found');
+    }
+    return axios.get<User>(`${API_URL}/email/${email}`, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
   }
 
   async addUser(user: User) {
-    return axios.post<User>(`${API_URL}/add`, user);
+    const token = this.getToken();
+    if (!token) {
+      throw new Error('No token found');
+    }
+    return axios.post<User>(`${API_URL}/add`, user, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
   }
 
   async updateUser(id: number, user: User) {
-    return axios.put<User>(`${API_URL}/update/all/${id}`, user);
+    const token = this.getToken();
+    if (!token) {
+      throw new Error('No token found');
+    }
+    return axios.put<User>(`${API_URL}/update/all/${id}`, user, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
   }
 
   async deleteUser(id: number) {
-    return axios.delete(`${API_URL}/delete/${id}`);
+    const token = this.getToken();
+    if (!token) {
+      throw new Error('No token found');
+    }
+    return axios.delete(`${API_URL}/delete/${id}`, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
   }
 
   async getLoanHistory(userId: number) {
-    return axios.get<Loan[]>(`${API_URL}/history/${userId}`);
+    const token = this.getToken();
+    if (!token) {
+      throw new Error('No token found');
+    }
+    return axios.get<Loan[]>(`${API_URL}/history/${userId}`, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
   }
-
   async logout() {
-    return axios.post(`${API_URL}/logout`);
+    const token = this.getToken();
+    if (!token) {
+      throw new Error('No token found');
+    }
+    return axios.post(`${API_URL}/logout`, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
   }
 }
 
