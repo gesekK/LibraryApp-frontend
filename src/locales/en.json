@@ -186,8 +186,103 @@
   "Password is required": "Password is required",
   "Password must have at least 5 characters": "Password must have at least 5 characters",
   "Login failed. Please check your credentials and try again.": "Login failed. Please check your credentials and try again."
+},
+
+  "search":{
+  "Search": "Search"
+},
+
+  "userlist": {
+    "There was an error fetching the users!": "There was an error fetching the users!",
+    "User deleted successfully!": "User deleted successfully!",
+    "There was an error deleting the user!": "There was an error deleting the user!",
+    "There was an error searching for the user!": "There was an error searching for the user!",
+    "User List": "User List",
+    "ID": "ID",
+    "Username": "Username",
+    "Full Name": "Full Name",
+    "Email": "Email",
+    "Role": "Role",
+    "Action": "Action",
+    "DELETE": "DELETE",
+    "MODIFY": "MODIFY"
+  },
+
+  "addReview": {
+    "No token found": "No token found",
+    "Token has expired": "Token has expired",
+    "There was an error decoding the token!": "There was an error decoding the token!",
+    "User not authenticated": "User not authenticated",
+    "header": "Add a Review",
+    "rating": "Rating",
+    "comment": "Comment",
+    "required": "is required",
+    "ratingMin": "Rating must be at least 1",
+    "ratingMax": "Rating must be at most 5",
+    "mustBeNumber": "must be a number",
+    "submitButton": "Submit Review"
+  },
+
+  "sidebar": {
+    "Loans": "Loans",
+    "Users": "Users",
+    "Add User": "Add User",
+    "User List": "User List",
+    "Books": "Books",
+    "Add Book": "Add Book",
+    "Book List": "Book List",
+    "Reviews": "Reviews",
+    "Log Out": "Log Out"
+  },
+
+  "home": {
+    "Sign Up": "Sign Up",
+    "Immerse yourself in the world of books": "Immerse yourself in the world of books",
+    "Acclaimed by critics": "Acclaimed by critics",
+    "Nearly 163 reviews issued in the last 7 days.": "Nearly 163 reviews issued in the last 7 days.",
+    "Latest titles": "Latest titles",
+    "Nearly 5,000 books available on our website. Check out the latest titles!": "Nearly 5,000 books available on our website. Check out the latest titles!",
+    "A leader among others": "A leader among others",
+    "As many as 267 rentals in the last 7 days! Check what we can surprise you!": "As many as 267 rentals in the last 7 days! Check what we can surprise you!",
+    "Benefits of reading books": "Benefits of reading books",
+    "Reading calms you down and slows down your heartbeat. Just 6 minutes of reading is enough to reduce the feeling of stress by as much as 60%! Interestingly, reading books reduces stress:": "Reading calms you down and slows down your heartbeat. Just 6 minutes of reading is enough to reduce the feeling of stress by as much as 60%! Interestingly, reading books reduces stress:",
+    "68% more than listening to music,": "68% more than listening to music,",
+    "300% more than going for a walk": "300% more than going for a walk",
+    "And as much as 600% more than playing computer games.": "And as much as 600% more than playing computer games.",
+    "Development of imagination": "Development of imagination",
+    "With only letters in front of our eyes, we have to visualize what is happening in the book - often these are even things that we cannot see in the real world! Reading stimulates the right hemisphere of the brain and develops our imagination.": "With only letters in front of our eyes, we have to visualize what is happening in the book - often these are even things that we cannot see in the real world! Reading stimulates the right hemisphere of the brain and develops our imagination."
+  },
+"userLoan.userLoan": {
+  "UserToken": "User Token: ",
+  "No token found": "No token found",
+  "Token has expired": "Token has expired",
+  "There was an error decoding the token!": "There was an error decoding the token!",
+  "User ID not found in token": "User ID not found in token",
+  "There was an error fetching the loans!": "There was an error fetching the loans!",
+  "An error occurred while fetching the loans.": "An error occurred while fetching the loans.",
+  "LoanId: ": "LoanId: ",
+  "Returned successfully!": "Returned successfully!",
+  "There was an error returning the book!": "There was an error returning the book!",
+  "Error": "Error",
+  "An unknown error occurred.": "An unknown error occurred.",
+  "My Loan History": "My Loan History",
+  "ID": "ID",
+  "Book Title": "Book Title",
+  "Loan Date": "Loan Date",
+  "Return Date": "Return Date",
+  "Due Date": "Due Date",
+  "Status": "Status",
+  "Action": "Action",
+  "RETURN": "RETURN"
 }
 
+
 }
+
+
+
+
+
+
 
 

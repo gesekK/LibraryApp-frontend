@@ -6,12 +6,14 @@ import '../../../styles/UserList.css';
 import axios from 'axios';
 import SearchBar from '../../SearchBar';
 import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 const UserList: React.FC = () => {
   const [users, setUsers] = useState<User[]>([]);
   const [error, setError] = useState<string | null>(null);
   const [searchValue, setSearchValue] = useState<string>('');
   const navigate = useNavigate();
+  const { t } = useTranslation();
 
   useEffect(() => {
     const fetchUsers = async () => {
@@ -19,7 +21,10 @@ const UserList: React.FC = () => {
         const response = await UserService.getAllUsers();
         setUsers(response.data);
       } catch (error) {
-        console.error('There was an error fetching the users!', error);
+        console.error(
+          t('userlist.There was an error fetching the users!'),
+          error,
+        );
       }
     };
     fetchUsers();
@@ -29,10 +34,13 @@ const UserList: React.FC = () => {
     try {
       await UserService.deleteUser(userId);
       setUsers(users.filter((user) => user.userId !== userId));
-      alert('User deleted successfully!');
+      alert(t('userlist.User deleted successfully!'));
     } catch (error: unknown) {
       if (axios.isAxiosError(error)) {
-        console.error('There was an error deleting the user!', error);
+        console.error(
+          t('userlist.There was an error deleting the user!'),
+          error,
+        );
         setError(`Error: ${error.response?.data?.message || error.message}`);
       } else {
         setError('An unknown error occurred.');
@@ -52,7 +60,10 @@ const UserList: React.FC = () => {
       }
       setUsers([response.data]);
     } catch (error) {
-      console.error('There was an error searching for the user!', error);
+      console.error(
+        t('userlist.There was an error searching for the user!'),
+        error,
+      );
     }
   };
 
@@ -64,19 +75,19 @@ const UserList: React.FC = () => {
     <div className="user-list-page">
       <div className="user-list-container">
         <div className="user-list-header">
-          <h2>User List</h2>
+          <h2>{t('userlist.User List')}</h2>
           <SearchBar onSearch={searchUser} />
         </div>
         <Table className="user-list-table">
           <TableHead>
             <tr>
-              <th>ID</th>
-              <th>Username</th>
-              <th>Full Name</th>
-              <th>Email</th>
-              <th>Role</th>
-              <th>Action</th>
-              <th>Action</th>
+              <th>{t('userlist.ID')}</th>
+              <th>{t('userlist.Username')}</th>
+              <th>{t('userlist.Full Name')}</th>
+              <th>{t('userlist.Email')}</th>
+              <th>{t('userlist.Role')}</th>
+              <th>{t('userlist.Action')}</th>
+              <th>{t('userlist.Action')}</th>
             </tr>
           </TableHead>
           <tbody>
@@ -96,7 +107,7 @@ const UserList: React.FC = () => {
                     }}
                     className="delete-button"
                   >
-                    DELETE
+                    {t('userlist.DELETE')}
                   </Button>
                 </TableCell>
                 <TableCell>
@@ -108,7 +119,7 @@ const UserList: React.FC = () => {
                     }}
                     className="update-button"
                   >
-                    MODIFY
+                    {t('userlist.MODIFY')}
                   </Button>
                 </TableCell>
               </tr>

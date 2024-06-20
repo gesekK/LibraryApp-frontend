@@ -119,9 +119,9 @@ const UsersBookList: React.FC = () => {
       );
     }
   };
-
   const handleReview = (id: number) => {
-    navigate(`/addReview/${id}`);
+    console.log('Book id: ', id);
+    navigate(`/reader/addReview/${id}`);
   };
 
   return (

@@ -15,10 +15,10 @@ const UsersLoanList: React.FC = () => {
   useEffect(() => {
     const getCurrentUserId = (): number | null => {
       const token = localStorage.getItem('userToken');
-      console.log(t('UserToken: '), token);
+      console.log(t('userLoan.userLoan.UserToken: '), token);
 
       if (!token) {
-        console.error(t('No token found'));
+        console.error(t('userLoan.userLoan.No token found'));
         return null;
       }
 
@@ -26,12 +26,15 @@ const UsersLoanList: React.FC = () => {
         const decodedToken: { id: number; exp: number } = jwtDecode(token);
         const currentTime = Date.now() / 1000; // Current time in seconds
         if (decodedToken.exp < currentTime) {
-          console.error(t('Token has expired'));
+          console.error(t('userLoan.userLoan.Token has expired'));
           return null;
         }
         return decodedToken.id;
       } catch (error) {
-        console.error(t('There was an error decoding the token!'), error);
+        console.error(
+          t('userLoan.userLoan.There was an error decoding the token!'),
+          error,
+        );
         return null;
       }
     };
@@ -42,7 +45,7 @@ const UsersLoanList: React.FC = () => {
         const userId = getCurrentUserId();
 
         if (!userId) {
-          throw new Error(t('User ID not found in token'));
+          throw new Error(t('userLoan.userLoan.User ID not found in token'));
         }
 
         // Filtrujemy wypożyczenia dla obecnego użytkownika
@@ -51,8 +54,13 @@ const UsersLoanList: React.FC = () => {
         );
         setLoans(userLoans);
       } catch (error) {
-        console.error(t('There was an error fetching the loans!'), error);
-        setError(t('An error occurred while fetching the loans.'));
+        console.error(
+          t('userLoan.userLoan.There was an error fetching the loans!'),
+          error,
+        );
+        setError(
+          t('userLoan.userLoan.An error occurred while fetching the loans.'),
+        );
       }
     };
 
@@ -64,15 +72,18 @@ const UsersLoanList: React.FC = () => {
     try {
       await LoanService.returnBook(id);
       setLoans(loans.filter((loan) => loan.loanId !== id));
-      alert(t('Returned successfully!'));
+      alert(t('userLoan.userLoan.Returned successfully!'));
     } catch (error: unknown) {
       if (axios.isAxiosError(error)) {
-        console.error(t('There was an error returning the book!'), error);
+        console.error(
+          t('userLoan.userLoan.There was an error returning the book!'),
+          error,
+        );
         setError(
-          `${t('Error')}: ${error.response?.data?.message || error.message}`,
+          `${t('userLoan.userLoan.Error')}: ${error.response?.data?.message || error.message}`,
         );
       } else {
-        setError(t('An unknown error occurred.'));
+        setError(t('userLoan.userLoan.An unknown error occurred.'));
       }
     }
   };
@@ -80,17 +91,19 @@ const UsersLoanList: React.FC = () => {
   return (
     <div className="loan-list-page">
       <div className="loan-list-container">
-        <h2 className="loan-list-header">{t('My Loan History')}</h2>
+        <h2 className="loan-list-header">
+          {t('userLoan.userLoan.My Loan History')}
+        </h2>
         <Table className="loan-list-table">
           <TableHead>
             <tr>
-              <th>{t('ID')}</th>
-              <th>{t('Book Title')}</th>
-              <th>{t('Loan Date')}</th>
-              <th>{t('Return Date')}</th>
-              <th>{t('Due Date')}</th>
-              <th>{t('Status')}</th>
-              <th>{t('Action')}</th>
+              <th>{t('userLoan.userLoan.ID')}</th>
+              <th>{t('userLoan.userLoan.Book Title')}</th>
+              <th>{t('userLoan.userLoan.Loan Date')}</th>
+              <th>{t('userLoan.userLoan.Return Date')}</th>
+              <th>{t('userLoan.userLoan.Due Date')}</th>
+              <th>{t('userLoan.userLoan.Status')}</th>
+              <th>{t('userLoan.userLoan.Action')}</th>
             </tr>
           </TableHead>
           <TableBody>
@@ -112,7 +125,7 @@ const UsersLoanList: React.FC = () => {
                       }}
                       className="delete-button"
                     >
-                      {t('RETURN')}
+                      {t('userLoan.userLoan.RETURN')}
                     </Button>
                   )}
                 </TableCell>

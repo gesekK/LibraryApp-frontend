@@ -164,8 +164,8 @@
     "An unknown error occurred.": "Wystąpił nieznany błąd."
   },
   "login": {
-    "Hello there,": "Miło Cię Widzieć!,",
-    "Welcome to Library System!": "Witaj w Systemie Bibliotecznym!",
+    "Hello there,": "Miło Cię Widzieć!",
+    "Welcome to Library System!": "Witaj w Systemie Bibliotecznym",
     "Username": "Nazwa użytkownika",
     "Password": "Hasło",
     "Enter your username": "Wprowadź swoją nazwę użytkownika",
@@ -175,8 +175,98 @@
     "Password is required": "Hasło jest wymagane",
     "Password must have at least 5 characters": "Hasło musi mieć co najmniej 5 znaków",
     "Login failed. Please check your credentials and try again.": "Logowanie nie powiodło się. Sprawdź swoje dane i spróbuj ponownie."
+  },
+
+  "search": {
+    "Search": "Szukaj"
+  },
+
+  "home": {
+    "Sign Up": "Zarejestruj się",
+    "Immerse yourself in the world of books": "Zanurz się w świecie książek",
+    "Acclaimed by critics": "Doceniane przez krytyków",
+    "Nearly 163 reviews issued in the last 7 days.": "Prawie 163 recenzje wydane w ciągu ostatnich 7 dni.",
+    "Latest titles": "Najnowsze tytuły",
+    "Nearly 5,000 books available on our website. Check out the latest titles!": "Ponad 5000 książek dostępnych na naszej stronie. Sprawdź najnowsze tytuły!",
+    "A leader among others": "Lider wśród innych",
+    "As many as 267 rentals in the last 7 days! Check what we can surprise you!": "Aż 267 wypożyczeń w ciągu ostatnich 7 dni! Sprawdź, czym możemy Cię zaskoczyć!",
+    "Benefits of reading books": "Korzyści z czytania książek",
+    "Reading calms you down and slows down your heartbeat. Just 6 minutes of reading is enough to reduce the feeling of stress byas much as 60%! Interestingly, reading books reduces stress:": "Czytanie uspokaja i spowalnia bicie serca. Wystarczy 6 minut czytania, aby zmniejszyć odczucie stresu o nawet 60%! Co ciekawe, czytanie książek redukuje stres:",
+    "68% more than listening to music,": "o 68% więcej niż słuchanie muzyki,",
+    "300% more than going for a walk": "o 300% więcej niż spacerowanie",
+    "And as much as 600% more than playing computer games.": "I aż o 600% więcej niż granie w gry komputerowe.",
+    "Development of imagination": "Rozwój wyobraźni",
+    "With only letters in front of our eyes, we have to visualize what is happening in the book - often these are even things that we cannot see in the real world! Reading stimulates the right hemisphere of the brain and develops our imagination.": "Mając jedynie litery przed naszymi oczami, musimy sobie wyobrazić, co dzieje się w książce - często są to rzeczy, których nie możemy zobaczyć w rzeczywistości! Czytanie stymuluje prawą półkulę mózgu i rozwija naszą wyobraźnię."
+  },
+
+  "userlist": {
+    "There was an error fetching the users!": "Wystąpił błąd podczas pobierania użytkowników!",
+    "User deleted successfully!": "Użytkownik został pomyślnie usunięty!",
+    "There was an error deleting the user!": "Wystąpił błąd podczas usuwania użytkownika!",
+    "There was an error searching for the user!": "Wystąpił błąd podczas wyszukiwania użytkownika!",
+    "User List": "Lista użytkowników",
+    "ID": "ID",
+    "Username": "Nazwa użytkownika",
+    "Full Name": "Pełne imię",
+    "Email": "Email",
+    "Role": "Rola",
+    "Action": "Akcja",
+    "DELETE": "USUŃ",
+    "MODIFY": "ZMODYFIKUJ"
+  },
+
+
+  "addReview": {
+    "No token found": "Nie znaleziono tokena",
+    "Token has expired": "Token wygasł",
+    "There was an error decoding the token!": "Wystąpił błąd podczas dekodowania tokena!",
+    "User not authenticated": "Użytkownik nie jest uwierzytelniony",
+    "header": "Dodaj recenzję",
+    "rating": "Ocena",
+    "comment": "Komentarz",
+    "required": "jest wymagane",
+    "ratingMin": "Ocena musi wynosić co najmniej 1",
+    "ratingMax": "Ocena musi wynosić maksymalnie 5",
+    "mustBeNumber": "musi być liczbą",
+    "submitButton": "Prześlij recenzję"
+  },
+
+  "sidebar": {
+    "Loans": "Wypożyczenia",
+    "Users": "Użytkownicy",
+    "Add User": "Dodaj użytkownika",
+    "User List": "Lista użytkowników",
+    "Books": "Książki",
+    "Add Book": "Dodaj książkę",
+    "Book List": "Lista książek",
+    "Reviews": "Recenzje",
+    "Log Out": "Wyloguj się"
+  },
+
+
+  "userLoan.userLoan": {
+    "UserToken": "Token użytkownika: ",
+    "No token found": "Nie znaleziono tokena",
+    "Token has expired": "Token wygasł",
+    "There was an error decoding the token!": "Wystąpił błąd podczas dekodowania tokena!",
+    "User ID not found in token": "Nie znaleziono ID użytkownika w tokenie",
+    "There was an error fetching the loans!": "Wystąpił błąd podczas pobierania wypożyczeń!",
+    "An error occurred while fetching the loans.": "Wystąpił błąd podczas pobierania wypożyczeń.",
+    "LoanId: ": "ID wypożyczenia: ",
+    "Returned successfully!": "Zwrócono pomyślnie!",
+    "There was an error returning the book!": "Wystąpił błąd podczas zwracania książki!",
+    "Error": "Błąd",
+    "An unknown error occurred.": "Wystąpił nieznany błąd.",
+    "My Loan History": "Moja historia wypożyczeń",
+    "ID": "ID",
+    "Book Title": "Tytuł książki",
+    "Loan Date": "Data wypożyczenia",
+    "Return Date": "Data zwrotu",
+    "Due Date": "Termin zwrotu",
+    "Status": "Status",
+    "Action": "Akcja",
+    "RETURN": "ZWROT"
   }
-
-
-
 }
+
+
