@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import '../styles/SearchBar.css';
+import { useTranslation } from 'react-i18next';
 
 interface SearchBarProps {
   onSearch: (searchTerm: string) => void;
 }
 
 const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
+  const { t } = useTranslation();
   const [searchTerm, setSearchTerm] = useState('');
 
   const handleSearch = (event: React.KeyboardEvent<HTMLInputElement>) => {
@@ -22,7 +24,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
     <div className="search-bar">
       <input
         type="text"
-        placeholder="Search"
+        placeholder={t('search.Search')}
         value={searchTerm}
         onChange={(event) => setSearchTerm(event.target.value)}
         onKeyPress={handleSearch}

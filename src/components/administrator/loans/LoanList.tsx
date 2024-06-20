@@ -10,8 +10,7 @@ import {
   TableRow,
   Typography,
 } from '@mui/material';
-import '../../../styles/LoanList.css';
-import axios from 'axios';
+import axios, { AxiosError } from 'axios';
 import { useTranslation } from 'react-i18next';
 
 const LoanList: React.FC = () => {
@@ -25,13 +24,22 @@ const LoanList: React.FC = () => {
         const response = await LoanService.getAllLoans();
         setLoans(response.data);
       } catch (error) {
-        console.error(t('loanList.errorFetching'), error);
-        setError(t('loanList.errorFetching'));
+        handleError(error);
       }
     };
 
     fetchLoans();
   }, [t]);
+
+  const handleError = (error: any) => {
+    if (axios.isAxiosError(error)) {
+      console.error(t('loanList.errorFetching'), error);
+      setError(`Error: ${error.response?.data?.message || error.message}`);
+    } else {
+      console.error(t('loanList.errorFetching'), error);
+      setError(t('loanList.errorFetching'));
+    }
+  };
 
   const handleConfirm = async (id: number) => {
     try {
@@ -39,15 +47,11 @@ const LoanList: React.FC = () => {
       setLoans(loans.filter((loan) => loan.loanId !== id));
       alert(t('loanList.confirmSuccess'));
     } catch (error: unknown) {
-      if (axios.isAxiosError(error)) {
-        console.error(t('loanList.errorConfirming'), error);
-        setError(`Error: ${error.response?.data?.message || error.message}`);
-      } else {
-        setError(t('loanList.errorConfirming'));
-      }
+      handleError(error);
     }
   };
 
+  // @ts-ignore
   return (
     <div className="loan-list-page">
       <div className="loan-list-container">
@@ -79,11 +83,15 @@ const LoanList: React.FC = () => {
                 <TableCell>
                   <Button
                     onClick={() => {
-                      if (loan.loanId !== undefined) {
+                      if (loan.loanId !== undefined && loan.loanId !== null) {
                         handleConfirm(loan.loanId);
+                      } else {
+                        console.error('Invalid loanId:', loan.loanId);
                       }
                     }}
-                    className="delete-button"
+                    className="confirm-button"
+                    variant="contained"
+                    color="primary"
                   >
                     {t('loanList.confirm')}
                   </Button>
